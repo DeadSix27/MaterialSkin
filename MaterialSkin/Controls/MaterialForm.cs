@@ -477,13 +477,13 @@ namespace MaterialSkin.Controls
 
             g.Clear(SkinManager.GetApplicationBackgroundColor());
             g.FillRectangle(SkinManager.ColorScheme.DarkPrimaryBrush, _statusBarBounds);
-            g.FillRectangle(SkinManager.ColorScheme.PrimaryBrush, _actionBarBounds);
+            //g.FillRectangle(SkinManager.ColorScheme.PrimaryBrush, _actionBarBounds);
 
             //Draw border
             using (var borderPen = new Pen(SkinManager.GetDividersColor(), 1))
             {
-                g.DrawLine(borderPen, new Point(0, _actionBarBounds.Bottom), new Point(0, Height - 2));
-                g.DrawLine(borderPen, new Point(Width - 1, _actionBarBounds.Bottom), new Point(Width - 1, Height - 2));
+                g.DrawLine(borderPen, new Point(0, _statusBarBounds.Bottom), new Point(0, Height - 2));
+                g.DrawLine(borderPen, new Point(Width - 1, _statusBarBounds.Bottom), new Point(Width - 1, Height - 2));
                 g.DrawLine(borderPen, new Point(0, Height - 1), new Point(Width - 1, Height - 1));
             }
 
@@ -562,7 +562,7 @@ namespace MaterialSkin.Controls
             }
 
             //Form title
-            g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_12, SkinManager.ColorScheme.TextBrush, new Rectangle(SkinManager.FORM_PADDING, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT), new StringFormat { LineAlignment = StringAlignment.Center });
+            g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_10, SkinManager.ColorScheme.TextBrush, new Rectangle(SkinManager.FORM_PADDING, 0, Width, STATUS_BAR_HEIGHT), new StringFormat { LineAlignment = StringAlignment.Center });
         }
     }
 
